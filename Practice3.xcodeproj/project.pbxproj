@@ -11,6 +11,11 @@
 		7798474D2BE9C75200429F9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798474C2BE9C75200429F9E /* ContentView.swift */; };
 		7798474F2BE9C75300429F9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7798474E2BE9C75300429F9E /* Assets.xcassets */; };
 		779847522BE9C75300429F9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 779847512BE9C75300429F9E /* Preview Assets.xcassets */; };
+		779847592BE9C76400429F9E /* checkThema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779847582BE9C76400429F9E /* checkThema.swift */; };
+		7798475B2BE9D48C00429F9E /* Love.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7798475A2BE9D48C00429F9E /* Love.txt */; };
+		779847602BE9D51000429F9E /* bringSentence_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798475F2BE9D51000429F9E /* bringSentence_.swift */; };
+		779847632BE9D95C00429F9E /* Motive.txt in Resources */ = {isa = PBXBuildFile; fileRef = 779847622BE9D95C00429F9E /* Motive.txt */; };
+		779847662BE9DE3800429F9E /* viewSenteces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779847652BE9DE3800429F9E /* viewSenteces.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		7798474C2BE9C75200429F9E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7798474E2BE9C75300429F9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		779847512BE9C75300429F9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		779847582BE9C76400429F9E /* checkThema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkThema.swift; sourceTree = "<group>"; };
+		7798475A2BE9D48C00429F9E /* Love.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Love.txt; sourceTree = "<group>"; };
+		7798475F2BE9D51000429F9E /* bringSentence_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bringSentence_.swift; sourceTree = "<group>"; };
+		779847622BE9D95C00429F9E /* Motive.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Motive.txt; sourceTree = "<group>"; };
+		779847652BE9DE3800429F9E /* viewSenteces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewSenteces.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,10 @@
 			children = (
 				7798474A2BE9C75200429F9E /* Practice3App.swift */,
 				7798474C2BE9C75200429F9E /* ContentView.swift */,
+				779847652BE9DE3800429F9E /* viewSenteces.swift */,
+				779847582BE9C76400429F9E /* checkThema.swift */,
+				779847642BE9DAFA00429F9E /* txts */,
+				7798475F2BE9D51000429F9E /* bringSentence_.swift */,
 				7798474E2BE9C75300429F9E /* Assets.xcassets */,
 				779847502BE9C75300429F9E /* Preview Content */,
 			);
@@ -65,6 +79,15 @@
 				779847512BE9C75300429F9E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		779847642BE9DAFA00429F9E /* txts */ = {
+			isa = PBXGroup;
+			children = (
+				779847622BE9D95C00429F9E /* Motive.txt */,
+				7798475A2BE9D48C00429F9E /* Love.txt */,
+			);
+			path = txts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +149,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				779847522BE9C75300429F9E /* Preview Assets.xcassets in Resources */,
+				779847632BE9D95C00429F9E /* Motive.txt in Resources */,
 				7798474F2BE9C75300429F9E /* Assets.xcassets in Resources */,
+				7798475B2BE9D48C00429F9E /* Love.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				779847592BE9C76400429F9E /* checkThema.swift in Sources */,
+				779847602BE9D51000429F9E /* bringSentence_.swift in Sources */,
 				7798474D2BE9C75200429F9E /* ContentView.swift in Sources */,
 				7798474B2BE9C75200429F9E /* Practice3App.swift in Sources */,
+				779847662BE9DE3800429F9E /* viewSenteces.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,14 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    var checker = checkThema()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            
+            viewSenteces()
+                .tabItem {
+                    Image(systemName: "character.bubble.fill")
+                    Text("명언")
+                }
+            
+            checkThema()
+                .tabItem {
+                    Image(systemName: "gearshape.fill")
+                    Text("테마 설정")
+                }
+                .toolbarBackground(.black, for: .tabBar)
+                
         }
-        .padding()
+        
+        .padding(10)
+        .listStyle(.plain)
+        
     }
 }
 
