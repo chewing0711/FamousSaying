@@ -30,31 +30,6 @@ struct checkThema: View {
                         isToggle(thema: "Motive", is_: isMotive)
                     }
             }
-            
-            
-            
-            Button(action: {
-                        showAlert = true  // 버튼을 누를 때 showAlert를 true로 설정
-                
-//                aboutThema.bringSentence()
-                    }) {
-                        Text("적용")
-                    }
-                    .alert(isPresented: $showAlert) {  // showAlert 상태 변수에 따라 Alert를 표시
-                        Alert(
-                            title: Text("적용 되었습니다."),
-                            //message: Text("asd"),
-                            dismissButton: .default(Text("확인"))
-                        )
-                        
-                    }
-            
-//            ForEach(asdf.Themas, id: \.self) { thema in
-//                Text(thema)
-//            }
-            
-            
-//            Text(asdf.returnMsg)
         }
         .listStyle(.plain)
     }

@@ -16,6 +16,11 @@
 		779847602BE9D51000429F9E /* bringSentence_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7798475F2BE9D51000429F9E /* bringSentence_.swift */; };
 		779847632BE9D95C00429F9E /* Motive.txt in Resources */ = {isa = PBXBuildFile; fileRef = 779847622BE9D95C00429F9E /* Motive.txt */; };
 		779847662BE9DE3800429F9E /* viewSenteces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779847652BE9DE3800429F9E /* viewSenteces.swift */; };
+		77A4FD1C2BEC69EF001C8691 /* backGround.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77A4FD1B2BEC69EF001C8691 /* backGround.jpg */; };
+		77A4FD1E2BECC15E001C8691 /* timeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A4FD1D2BECC15E001C8691 /* timeSet.swift */; };
+		77A4FD242BECE2BE001C8691 /* time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A4FD232BECE2BE001C8691 /* time.swift */; };
+		77DCD5D12BEB4F3C00DCA7CC /* YEONGJUSeonbi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77DCD5D02BEB4F3C00DCA7CC /* YEONGJUSeonbi.otf */; };
+		77DCD5D32BEB540300DCA7CC /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DCD5D22BEB540300DCA7CC /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,12 @@
 		7798475F2BE9D51000429F9E /* bringSentence_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bringSentence_.swift; sourceTree = "<group>"; };
 		779847622BE9D95C00429F9E /* Motive.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Motive.txt; sourceTree = "<group>"; };
 		779847652BE9DE3800429F9E /* viewSenteces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewSenteces.swift; sourceTree = "<group>"; };
+		77A4FD1B2BEC69EF001C8691 /* backGround.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backGround.jpg; sourceTree = "<group>"; };
+		77A4FD1D2BECC15E001C8691 /* timeSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeSet.swift; sourceTree = "<group>"; };
+		77A4FD232BECE2BE001C8691 /* time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = time.swift; sourceTree = "<group>"; };
+		77DCD5CE2BEB450000DCA7CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		77DCD5D02BEB4F3C00DCA7CC /* YEONGJUSeonbi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = YEONGJUSeonbi.otf; sourceTree = "<group>"; };
+		77DCD5D22BEB540300DCA7CC /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +56,7 @@
 		7798473E2BE9C75200429F9E = {
 			isa = PBXGroup;
 			children = (
+				77DCD5D22BEB540300DCA7CC /* SwiftUIView.swift */,
 				779847492BE9C75200429F9E /* Practice3 */,
 				779847482BE9C75200429F9E /* Products */,
 			);
@@ -61,10 +73,14 @@
 		779847492BE9C75200429F9E /* Practice3 */ = {
 			isa = PBXGroup;
 			children = (
+				77A4FD1B2BEC69EF001C8691 /* backGround.jpg */,
+				77DCD5CE2BEB450000DCA7CC /* Info.plist */,
 				7798474A2BE9C75200429F9E /* Practice3App.swift */,
 				7798474C2BE9C75200429F9E /* ContentView.swift */,
 				779847652BE9DE3800429F9E /* viewSenteces.swift */,
 				779847582BE9C76400429F9E /* checkThema.swift */,
+				77A4FD212BECE014001C8691 /* aboutTime */,
+				77DCD5CF2BEB452600DCA7CC /* Font */,
 				779847642BE9DAFA00429F9E /* txts */,
 				7798475F2BE9D51000429F9E /* bringSentence_.swift */,
 				7798474E2BE9C75300429F9E /* Assets.xcassets */,
@@ -88,6 +104,23 @@
 				7798475A2BE9D48C00429F9E /* Love.txt */,
 			);
 			path = txts;
+			sourceTree = "<group>";
+		};
+		77A4FD212BECE014001C8691 /* aboutTime */ = {
+			isa = PBXGroup;
+			children = (
+				77A4FD1D2BECC15E001C8691 /* timeSet.swift */,
+				77A4FD232BECE2BE001C8691 /* time.swift */,
+			);
+			path = aboutTime;
+			sourceTree = "<group>";
+		};
+		77DCD5CF2BEB452600DCA7CC /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				77DCD5D02BEB4F3C00DCA7CC /* YEONGJUSeonbi.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +184,9 @@
 				779847522BE9C75300429F9E /* Preview Assets.xcassets in Resources */,
 				779847632BE9D95C00429F9E /* Motive.txt in Resources */,
 				7798474F2BE9C75300429F9E /* Assets.xcassets in Resources */,
+				77DCD5D12BEB4F3C00DCA7CC /* YEONGJUSeonbi.otf in Resources */,
 				7798475B2BE9D48C00429F9E /* Love.txt in Resources */,
+				77A4FD1C2BEC69EF001C8691 /* backGround.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +198,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				779847592BE9C76400429F9E /* checkThema.swift in Sources */,
+				77A4FD1E2BECC15E001C8691 /* timeSet.swift in Sources */,
 				779847602BE9D51000429F9E /* bringSentence_.swift in Sources */,
+				77DCD5D32BEB540300DCA7CC /* SwiftUIView.swift in Sources */,
+				77A4FD242BECE2BE001C8691 /* time.swift in Sources */,
 				7798474D2BE9C75200429F9E /* ContentView.swift in Sources */,
 				7798474B2BE9C75200429F9E /* Practice3App.swift in Sources */,
 				779847662BE9DE3800429F9E /* viewSenteces.swift in Sources */,
@@ -303,6 +341,8 @@
 				DEVELOPMENT_TEAM = S6R67K7J9C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Practice3/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -332,6 +372,8 @@
 				DEVELOPMENT_TEAM = S6R67K7J9C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Practice3/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
