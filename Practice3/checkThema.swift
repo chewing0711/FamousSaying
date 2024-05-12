@@ -14,8 +14,6 @@ struct checkThema: View {
     @State var isLove: Bool = false
     @State var isMotive: Bool = false
     
-    @State private var showAlert = false
-    // 상태 변수를 선언하여 Alert 표시 여부 관리
     
     var body: some View {
         List {
@@ -32,6 +30,9 @@ struct checkThema: View {
             }
         }
         .listStyle(.plain)
+        .padding()
+        //.background(Color.green)
+        .cornerRadius(10)
     }
     
     func isToggle(thema: String, is_: Bool) {

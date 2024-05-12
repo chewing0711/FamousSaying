@@ -11,7 +11,9 @@ import SwiftUI
 struct Practice3App: App {
     var body: some Scene {
         WindowGroup {
+            // asd()
             ContentView()
+            //   a()
         }
     }
 }
