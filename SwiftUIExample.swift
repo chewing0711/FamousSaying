@@ -1,38 +1,44 @@
 import SwiftUI
 
 struct a: View {
-    var Array: [String] = ["1", "2", "3"]
+    @State private var selectedTime = Date()
+    @Environment(\.calendar) var calendar
     
+    var hour: Int {
+        calendar.component(.hour, from: selectedTime)
+    }
+    
+    var minute: Int {
+        calendar.component(.minute, from: selectedTime)
+    }
+    
+    @State var num: Int = 0
+    @State var num2: Int = 0
+
     var body: some View {
-        ZStack {
-            Circle()
-                .frame(width: 300, height: 300)
-                .foregroundStyle(Color.blue)
+        VStack {
+            DatePicker(
+                "Select Time",
+                selection: $selectedTime,
+                displayedComponents: .hourAndMinute
+            )
+            .datePickerStyle(WheelDatePickerStyle())
+            .frame(maxWidth: 300)
             
-            Circle()
-                .frame(width: 200, height: 200)
-                .foregroundStyle(Color.red)
-            
-            Circle()
-                .frame(width: 100, height: 100)
-                .foregroundStyle(Color.yellow)
+            Button(action: {
+                num = hour
+                num2 = minute
+            }, label: {
+                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+            })
+            // 시간과 분을 따로 표시
+            Text("Hour: \(num)")
+            Text("Minute: \(num2)")
         }
     }
 }
+
 
 #Preview {
     a()
-}
-
-
-struct a_: View {
-    var Array: [String] = ["1", "2", "3"]
-    
-    var body: some View {
-        HStack {
-            ForEach(Array, id: \.self) { item in
-                Text(item)
-            }
-        }
-    }
 }
