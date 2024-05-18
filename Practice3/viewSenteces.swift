@@ -9,7 +9,7 @@ import SwiftUI
 
 struct viewSentences: View {
     
-    @State var aboutThema = asdf()  // 가정된 데이터 모델
+    @State var aboutThema = Sentence()  // 가정된 데이터 모델
     
     @State var showAlert = false
     
@@ -74,10 +74,10 @@ struct viewSentences: View {
         
         aboutThema.bringSentence()
         
-        if asdf.Themas.count == 0 {
+        if Sentence.Themas.count == 0 {
             showAlert = true
         } else {
-            msg = asdf.getMsg()
+            msg = Sentence.getMsg()
         }
         
         isRefreshing = false

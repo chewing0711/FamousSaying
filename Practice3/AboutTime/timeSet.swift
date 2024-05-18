@@ -7,9 +7,15 @@
 
 import SwiftUI  // SwiftUI 도구를 사용할 수 있게 해줘요. SwiftUI는 화면을 만드는 도구예요.
 import UserNotifications  // 알림을 관리할 수 있는 도구를 사용할 수 있게 해줘요.
+import SwiftData
 
 // 'timeSet'이라는 화면을 만드는 구조체예요. SwiftUI에서 화면은 'View'라고 불러요.
 struct timeSet: View {
+    
+    @Environment(\.modelContext) private var modelContext
+    // 데이터를 가져온다?
+    @Query var times: [Time]
+    
     @ObservedObject var timeListControl = TimeListViewModel()
     
     @State private var selectedDate = Date()  // 사용자가 날짜를 선택할 수 있는 공간을 만들어요.
@@ -37,11 +43,12 @@ struct timeSet: View {
                 
                 List {  // 목록을 만들어요.
                     Section(header: Text("스케줄된 알림")) {  // 목록의 헤더에 "스케줄된 알림"이라고 표시해요.
-                        ForEach(sortTimes(times: timeListControl.times), id: \.id) { Time in
-                            Text(displayTime(hour: Time.hour, minute: Time.minute, isAM: Time.isAM, id: Time.id))  // 날짜를 보여주는 텍스트예요.
-                            
+                        Text(displayTime(hour: 1, minute: 1, isAM: true))
+                        
+                        ForEach(sortTimes(times: self.times), id: \.id) { Time in
+                            Text(displayTime(hour: Time.hour, minute: Time.minute, isAM: Time.isAM))  // 날짜를 보여주는 텍스트예요.
                         }
-                        .onDelete(perform: removeTimes)  // 삭제할 수 있게 해요.
+                        .onDelete(perform: removeTime)  // 삭제할 수 있게 해요.
                     }
                 }
                 .listStyle(.plain)  // 목록 스타일을 단순하게 해요.
@@ -50,7 +57,7 @@ struct timeSet: View {
                 HStack {  // 가로로 내용을 쌓을 수 있는 뷰예요.
                     Button("알림 스케줄") {
                         // 해당 시간에 따른 객체 생성, 배열 추가
-                        timeListControl.addTime(time: Time(hour: hour, minute: minute))
+                        self.addTime(hour: hour, minute: minute)
                     }
                     .alert(isPresented: $showingAlert) {  // 경고 메시지를 어떻게 보여줄지 설정해요.
                         Alert(title: Text("중복 알림"), message: Text("이미 이 시간에 스케줄된 알림이 있습니다."), dismissButton: .default(Text("확인")))
@@ -72,19 +79,46 @@ struct timeSet: View {
         .edgesIgnoringSafeArea(.all)  // 안전 영역을 무시하고 모든 곳에 내용을 표시해요.
     }
     
-    func displayTime(hour: Int, minute: Int, isAM: Bool, id: String) -> String {
+    func displayTime(hour: Int, minute: Int, isAM: Bool) -> String {
         let hour12 = hour % 12 == 0 ? 12 : hour % 12
         
         let suffix = isAM ? "오전" : "오후"
         
-        let id = id
-        
-        return "\(suffix) \(hour12):\(String(format: "%02d", minute)) \(id)"
+        return "\(suffix) \(hour12):\(String(format: "%02d", minute))"
     }
     
-    func removeTimes(at offsets: IndexSet) {
-            timeListControl.removeTime(at: offsets)
+    func isTimeDuplicate(hour: Int, minute: Int) -> Bool {
+        let existingTime = times.first { time in
+            time.hour == hour && time.minute == minute
         }
+        return existingTime != nil
+    }
+    
+    func addTime(hour: Int, minute: Int) {
+        if isTimeDuplicate(hour: hour, minute: minute) {
+            // 중복 시간이면 알림 표시
+            showingAlert = true
+        } else {
+            // 중복이 아닐 경우 시간 추가
+            withAnimation {
+                let objTime = Time(hour: hour, minute: minute)
+                modelContext.insert(objTime)
+                scheduleNotification(time: objTime)
+            }
+        }
+    }
+    
+    func removeTime(at offsets: IndexSet) {
+        withAnimation {
+            for index in offsets {
+                modelContext.delete(times[index])
+            }
+        }
+    }
+    //
+    //    func removeTimes(at offsets: IndexSet) {
+    //            timeListControl.removeTime(at: offsets)
+    //        }
 }
 
 // 이 부분은 이 화면을 미리 보여주는 설정이에요.

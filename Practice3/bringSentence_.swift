@@ -9,7 +9,7 @@ import Foundation
 
 // 개행문자를 기준으로 나누는 코드
 func splitString(msg: String) -> [String] {
-    return msg.components(separatedBy:  "\n\n")
+    return msg.components(separatedBy:  "\n")
 }
 
 // 랜덤한 정수 반환
@@ -17,7 +17,7 @@ func randInt(limit: Int) -> Int {
     return Int.random(in: 0 ... limit - 1)
 }
 
-public class asdf {
+class Sentence: ObservableObject {
     
     // 리턴할 글을 저장하는 변수
     static var returnMsg: String = ""
@@ -32,13 +32,12 @@ public class asdf {
     }
     
     func addThemas(thema: String) {
-        asdf.Themas.append(thema)
+        Sentence.Themas.append(thema)
     }
     
     func removeThemas(thema: String) {
-        asdf.Themas.removeAll { $0 == thema }
+        Sentence.Themas.removeAll { $0 == thema }
     }
-    
     
     func bringSentence() {
         
@@ -46,7 +45,7 @@ public class asdf {
         var msgArray: [String] = [] // 불러온 글들을 나눠서 저장할 변수
         
         // 랜덤한 테마를 반환
-        thema = asdf.Themas.count > 0 ? asdf.Themas[randInt(limit: asdf.Themas.count)] : ""
+        thema = Sentence.Themas.count > 0 ? Sentence.Themas[randInt(limit: Sentence.Themas.count)] : ""
         
         txtPath = "\\txts\\" + thema
         
@@ -57,18 +56,18 @@ public class asdf {
                 msgs = content // 읽은 내용을 fileContent 상태 변수에 저장합니다.
                 msgArray = splitString(msg: msgs)
                 
-                asdf.returnMsg = msgArray[randInt(limit: msgArray.count)]
+                Sentence.returnMsg = msgArray[randInt(limit: msgArray.count)]
                 
             } else {
-                asdf.returnMsg = "파일을 읽을 수 없습니다.1" // 파일 읽기에 실패한 경우의 메시지.
+                Sentence.returnMsg = "파일을 읽을 수 없습니다.1" // 파일 읽기에 실패한 경우의 메시지.
             }
         } else {
-            asdf.returnMsg = "파일을 찾을 수 없습니다.2" // 파일 경로를 찾지 못한 경우의 메시지.
+            Sentence.returnMsg = "파일을 찾을 수 없습니다.2" // 파일 경로를 찾지 못한 경우의 메시지.
         }
     }
 
     static func getMsg() -> String {
-        return asdf.returnMsg
+        return Sentence.returnMsg
     }
 
 }

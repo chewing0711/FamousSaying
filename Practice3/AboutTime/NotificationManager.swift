@@ -7,33 +7,17 @@
 
 import SwiftUI
 import UserNotifications  // 컴퓨터가 알림 도구를 사용할 수 있도록 도와줍니다.
+import SwiftData
 
 class TimeListViewModel: ObservableObject {
-    @Published var times = [Time(hour: 0, minute: 1), Time(hour: 14, minute: 1), Time(hour: 9, minute: 30), Time(hour: 12, minute: 0)]
+    @Environment(\.modelContext) private var modelContext
+    
+    @Query var times: [Time]  = [Time(hour: 1, minute: 1), Time(hour: 2, minute: 2)]
     
     
     private func alertForDuplicate() {
         // Alert는 SwiftUI View에서 처리합니다.
     }
-    
-    func addTime(time: Time) {
-        if self.times.contains(where: { $0.id == time.id }) {
-            // 중복된 ID가 있다면 알림
-            DispatchQueue.main.async {
-                withAnimation {
-                    self.alertForDuplicate()
-                }
-            }
-        } else {
-            // 중복된 ID가 없다면 푸시 알림 설정
-            self.times.append(time)
-            scheduleNotification(time: time)
-        }
-    }
-    func removeTime(at offsets: IndexSet) {
-            times.remove(atOffsets: offsets)
-        }
-    
 }
 
 func sortTimes(times: [Time]) -> [Time] {
@@ -49,6 +33,7 @@ func sortTimes(times: [Time]) -> [Time] {
 }
 
 func scheduleNotification(time: Time) {
+    
     let content = UNMutableNotificationContent()
     content.title = "알림"
     content.body = "설정된 시간입니다: \(time.hour)시 \(time.minute)분"
@@ -67,28 +52,5 @@ func scheduleNotification(time: Time) {
         if let error = error {
             print("Error scheduling notification: \(error)")
         }
-    }
-}
-
-import UIKit
-import SwiftData
-
-
-class Time {
-    let id: String
-    
-    var hour: Int
-    var minute: Int
-    
-    var isAM: Bool
-    
-    init(hour: Int, minute: Int) {
-        self.id = "\(hour)_\(minute)"
-        
-        self.hour = hour
-        self.minute = minute
-        
-        self.isAM = hour < 12 ? true : false
-        
     }
 }
