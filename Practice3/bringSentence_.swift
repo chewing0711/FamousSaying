@@ -9,7 +9,7 @@ import Foundation
 
 // 개행문자를 기준으로 나누는 코드
 func splitString(msg: String) -> [String] {
-    return msg.components(separatedBy:  "\n")
+    return msg.components(separatedBy: "\n")
 }
 
 // 랜덤한 정수 반환
@@ -23,6 +23,11 @@ class Sentence: ObservableObject {
     static var returnMsg: String = ""
     
     static var Themas: [String] = []
+    
+    var temp: [String] = ["", ""]
+    var title_msg: String = ""
+    static var title: String = ""
+    static var msg: String = ""
     
     var thema: String = ""
     
@@ -56,18 +61,28 @@ class Sentence: ObservableObject {
                 msgs = content // 읽은 내용을 fileContent 상태 변수에 저장합니다.
                 msgArray = splitString(msg: msgs)
                 
+                title_msg = msgArray[randInt(limit: msgArray.count)]
+                
+                temp = title_msg.components(separatedBy: "-")
+                
+                Sentence.title = temp[1]
+                Sentence.msg = temp[0]
+                
                 Sentence.returnMsg = msgArray[randInt(limit: msgArray.count)]
                 
             } else {
-                Sentence.returnMsg = "파일을 읽을 수 없습니다.1" // 파일 읽기에 실패한 경우의 메시지.
+                Sentence.msg = "파일을 읽을 수 없습니다.1" // 파일 읽기에 실패한 경우의 메시지.
             }
         } else {
-            Sentence.returnMsg = "파일을 찾을 수 없습니다.2" // 파일 경로를 찾지 못한 경우의 메시지.
+            Sentence.msg = "파일을 찾을 수 없습니다.2" // 파일 경로를 찾지 못한 경우의 메시지.
         }
     }
 
     static func getMsg() -> String {
-        return Sentence.returnMsg
+        return Sentence.msg
+    }
+    static func getTitle() -> String {
+        return Sentence.title
     }
 
 }

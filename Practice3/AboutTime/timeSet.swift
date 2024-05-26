@@ -43,8 +43,6 @@ struct timeSet: View {
                 
                 List {  // 목록을 만들어요.
                     Section(header: Text("스케줄된 알림")) {  // 목록의 헤더에 "스케줄된 알림"이라고 표시해요.
-                        Text(displayTime(hour: 1, minute: 1, isAM: true))
-                        
                         ForEach(sortTimes(times: self.times), id: \.id) { Time in
                             Text(displayTime(hour: Time.hour, minute: Time.minute, isAM: Time.isAM))  // 날짜를 보여주는 텍스트예요.
                         }

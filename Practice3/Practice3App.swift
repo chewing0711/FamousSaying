@@ -11,20 +11,6 @@ import SwiftData
 @main
 struct Practice3App: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-//    
-//    var sharedModelContainerTime: ModelContainer = {
-//        let schema = Schema([
-//            Time.self, Thema.self, Post.self,
-//        ])
-//        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-//
-//        do {
-//            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-//        } catch {
-//            fatalError("Could not create ModelContainer: \(error)")
-//        }
-//    }()
-//    
     var body: some Scene {
         WindowGroup {
             // asd()

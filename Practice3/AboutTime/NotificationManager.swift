@@ -12,7 +12,7 @@ import SwiftData
 class TimeListViewModel: ObservableObject {
     @Environment(\.modelContext) private var modelContext
     
-    @Query var times: [Time]  = [Time(hour: 1, minute: 1), Time(hour: 2, minute: 2)]
+    @Query var times: [Time]
     
     
     private func alertForDuplicate() {
@@ -35,8 +35,8 @@ func sortTimes(times: [Time]) -> [Time] {
 func scheduleNotification(time: Time) {
     
     let content = UNMutableNotificationContent()
-    content.title = "알림"
-    content.body = "설정된 시간입니다: \(time.hour)시 \(time.minute)분"
+    content.title = Sentence.title
+    content.body = Sentence.msg
     content.sound = UNNotificationSound.default
     
     var dateComponents = DateComponents()

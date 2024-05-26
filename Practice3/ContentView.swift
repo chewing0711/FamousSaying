@@ -17,21 +17,21 @@ struct ContentView: View {
                 viewSentences()
                     .tabItem {
                         Image(systemName: "character.bubble.fill")
-                        Text("명언")
+                        Text("A Sentence")
                     }
                     
                 
                 checkThema()
                     .tabItem {
                         Image(systemName: "gearshape")
-                        Text("테마 설정")
+                        Text("Thema")
                     }
                     
                 
                 timeSet()
                     .tabItem {
-                        Image(systemName: "gearshape.fill")
-                        Text("시간 설정")
+                        Image(systemName: "timer.circle.fill")
+                        Text("Time")
                     }
                     
                 

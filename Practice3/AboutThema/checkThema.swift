@@ -11,7 +11,7 @@ import SwiftData
 struct checkThema: View {
     @Environment(\.modelContext) private var modelContext
     
-    @Query private var themas: [Thema] = []
+    @Query private var themas: [Thema]
     
     @State var aboutThema = Sentence()
     
@@ -27,7 +27,7 @@ struct checkThema: View {
                                     themas[index].isCheck = newValue
                                     isToggle(thema: thema.title, is_: newValue)
                                     try? modelContext.save()
-                                
+                                    
                                 }
                             }
                         ))
@@ -41,6 +41,7 @@ struct checkThema: View {
                 addInitialThemas()
             }
         }
+        
     }
     
     func isToggle(thema: String, is_: Bool) {
@@ -63,16 +64,24 @@ struct checkThema: View {
             let thema = Thema(title: title)
             modelContext.insert(thema)
         }
-        
         try? modelContext.save()
     }
     
     func setThema() {
+        
+        addInitialThemas()
+        
         for i in 0 ..< themas.count {
-            if themas[i].isCheck {
-                Sentence.Themas.append(themas[i].title)
-            }
+            isToggle(thema: themas[i].title, is_: themas[i].isCheck)
         }
+        
+        //        for i in 0 ..< themas.count {
+        //            if themas[i].isCheck {
+        //                Sentence.Themas.append(themas[i].title)
+        //            }
+        //        }
+        
+        
     }
 }
 
