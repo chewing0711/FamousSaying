@@ -14,7 +14,6 @@ class TimeListViewModel: ObservableObject {
     
     @Query var times: [Time]
     
-    
     private func alertForDuplicate() {
         // Alert는 SwiftUI View에서 처리합니다.
     }
@@ -31,13 +30,28 @@ func sortTimes(times: [Time]) -> [Time] {
         }
     }
 }
-
+var stc = Sentence()
 func scheduleNotification(time: Time) {
+    stc.bringSentence()
     
     let content = UNMutableNotificationContent()
-    content.title = Sentence.title
-    content.body = Sentence.msg
-    content.sound = UNNotificationSound.default
+    content.title = "당신의 마음에 한 마디"
+    
+    var bodyMsg = ""
+    for i in 0..<Sentence.msg.count {
+        
+        if i == 0 {
+            bodyMsg += Sentence.msg[i]
+            bodyMsg += "\n- "
+        }
+        else if i == 1 {
+            bodyMsg += (Sentence.msg[i] + " -")
+        }
+        
+    }
+    content.body = bodyMsg
+    
+    // content.sound = UNNotificationSound.default
     
     var dateComponents = DateComponents()
     
@@ -53,4 +67,8 @@ func scheduleNotification(time: Time) {
             print("Error scheduling notification: \(error)")
         }
     }
+}
+
+func cancelNotification(identifier: String) {
+    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
 }

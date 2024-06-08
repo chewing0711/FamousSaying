@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7752F4042BEF4785009EAEC8 /* SwiftUIExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7752F4032BEF4785009EAEC8 /* SwiftUIExample.swift */; };
 		7752F4072BF07D44009EAEC8 /* timeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7752F4062BF07D44009EAEC8 /* timeSet.swift */; };
 		7752F4282BF20716009EAEC8 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7752F4272BF20716009EAEC8 /* Time.swift */; };
 		7752F42A2BF21479009EAEC8 /* Thema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7752F4292BF21479009EAEC8 /* Thema.swift */; };
@@ -23,12 +22,11 @@
 		77A4FD1C2BEC69EF001C8691 /* backGround.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77A4FD1B2BEC69EF001C8691 /* backGround.jpg */; };
 		77A4FD262BEDA6DB001C8691 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A4FD252BEDA6DB001C8691 /* NotificationManager.swift */; };
 		77DCD5D12BEB4F3C00DCA7CC /* YEONGJUSeonbi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77DCD5D02BEB4F3C00DCA7CC /* YEONGJUSeonbi.otf */; };
-		77DCD5D32BEB540300DCA7CC /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DCD5D22BEB540300DCA7CC /* SwiftUIView.swift */; };
+		77E624A42C13EE7600B9579A /* 가족.txt in Resources */ = {isa = PBXBuildFile; fileRef = 77E624A22C13EE7600B9579A /* 가족.txt */; };
+		77E624A52C13EE7600B9579A /* 우정.txt in Resources */ = {isa = PBXBuildFile; fileRef = 77E624A32C13EE7600B9579A /* 우정.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7752F4032BEF4785009EAEC8 /* SwiftUIExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExample.swift; sourceTree = "<group>"; };
-		7752F4052BEF6BBE009EAEC8 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7752F4062BF07D44009EAEC8 /* timeSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeSet.swift; sourceTree = "<group>"; };
 		7752F4272BF20716009EAEC8 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		7752F4292BF21479009EAEC8 /* Thema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thema.swift; sourceTree = "<group>"; };
@@ -46,7 +44,8 @@
 		77A4FD252BEDA6DB001C8691 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		77DCD5CE2BEB450000DCA7CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		77DCD5D02BEB4F3C00DCA7CC /* YEONGJUSeonbi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = YEONGJUSeonbi.otf; sourceTree = "<group>"; };
-		77DCD5D22BEB540300DCA7CC /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		77E624A22C13EE7600B9579A /* 가족.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "가족.txt"; sourceTree = "<group>"; };
+		77E624A32C13EE7600B9579A /* 우정.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "우정.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +62,6 @@
 		7798473E2BE9C75200429F9E = {
 			isa = PBXGroup;
 			children = (
-				77DCD5D22BEB540300DCA7CC /* SwiftUIView.swift */,
-				7752F4052BEF6BBE009EAEC8 /* MyPlayground.playground */,
-				7752F4032BEF4785009EAEC8 /* SwiftUIExample.swift */,
 				779847492BE9C75200429F9E /* Practice3 */,
 				779847482BE9C75200429F9E /* Products */,
 			);
@@ -109,6 +105,8 @@
 		779847642BE9DAFA00429F9E /* txts */ = {
 			isa = PBXGroup;
 			children = (
+				77E624A22C13EE7600B9579A /* 가족.txt */,
+				77E624A32C13EE7600B9579A /* 우정.txt */,
 				779847622BE9D95C00429F9E /* 동기부여.txt */,
 				7798475A2BE9D48C00429F9E /* 사랑.txt */,
 			);
@@ -202,8 +200,10 @@
 			files = (
 				779847522BE9C75300429F9E /* Preview Assets.xcassets in Resources */,
 				779847632BE9D95C00429F9E /* 동기부여.txt in Resources */,
+				77E624A42C13EE7600B9579A /* 가족.txt in Resources */,
 				7798474F2BE9C75300429F9E /* Assets.xcassets in Resources */,
 				77DCD5D12BEB4F3C00DCA7CC /* YEONGJUSeonbi.otf in Resources */,
+				77E624A52C13EE7600B9579A /* 우정.txt in Resources */,
 				7798475B2BE9D48C00429F9E /* 사랑.txt in Resources */,
 				77A4FD1C2BEC69EF001C8691 /* backGround.jpg in Resources */,
 			);
@@ -220,12 +220,10 @@
 				779847592BE9C76400429F9E /* checkThema.swift in Sources */,
 				779847602BE9D51000429F9E /* bringSentence_.swift in Sources */,
 				7752F4282BF20716009EAEC8 /* Time.swift in Sources */,
-				77DCD5D32BEB540300DCA7CC /* SwiftUIView.swift in Sources */,
 				7798474D2BE9C75200429F9E /* ContentView.swift in Sources */,
 				77A4FD262BEDA6DB001C8691 /* NotificationManager.swift in Sources */,
 				7798474B2BE9C75200429F9E /* Practice3App.swift in Sources */,
 				779847662BE9DE3800429F9E /* viewSenteces.swift in Sources */,
-				7752F4042BEF4785009EAEC8 /* SwiftUIExample.swift in Sources */,
 				7752F4072BF07D44009EAEC8 /* timeSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

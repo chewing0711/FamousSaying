@@ -109,7 +109,9 @@ struct timeSet: View {
     func removeTime(at offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(times[index])
+                let time = times[index]
+                modelContext.delete(time)
+                cancelNotification(identifier: time.id)  // 알림 취소
             }
         }
     }

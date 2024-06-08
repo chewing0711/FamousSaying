@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Practice3
-//
-//  Created by 박민규 on 5/7/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {

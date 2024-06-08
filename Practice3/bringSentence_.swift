@@ -26,8 +26,8 @@ class Sentence: ObservableObject {
     
     var temp: [String] = ["", ""]
     var title_msg: String = ""
-    static var title: String = ""
-    static var msg: String = ""
+    
+    static var msg: [String] = []
     
     var thema: String = ""
     
@@ -63,26 +63,15 @@ class Sentence: ObservableObject {
                 
                 title_msg = msgArray[randInt(limit: msgArray.count)]
                 
-                temp = title_msg.components(separatedBy: "-")
+                Sentence.msg = title_msg.components(separatedBy: " - ")
                 
-                Sentence.title = temp[1]
-                Sentence.msg = temp[0]
-                
-                Sentence.returnMsg = msgArray[randInt(limit: msgArray.count)]
+                // Sentence.returnMsg = msgArray[randInt(limit: msgArray.count)]
                 
             } else {
-                Sentence.msg = "파일을 읽을 수 없습니다.1" // 파일 읽기에 실패한 경우의 메시지.
+                Sentence.msg.append("파일을 읽을 수 없습니다.1") // 파일 읽기에 실패한 경우의 메시지.
             }
         } else {
-            Sentence.msg = "파일을 찾을 수 없습니다.2" // 파일 경로를 찾지 못한 경우의 메시지.
+            Sentence.msg.append("파일을 찾을 수 없습니다.2")// 파일 경로를 찾지 못한 경우의 메시지.
         }
     }
-
-    static func getMsg() -> String {
-        return Sentence.msg
-    }
-    static func getTitle() -> String {
-        return Sentence.title
-    }
-
 }

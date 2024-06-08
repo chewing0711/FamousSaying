@@ -1,10 +1,3 @@
-//
-//  viewSenteces.swift
-//  Practice3
-//
-//  Created by 박민규 on 5/7/24.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -37,6 +30,7 @@ struct viewSentences: View {
                     Spacer()
                     VStack {
                         Spacer()
+                        
                         Text(temp.count > 0 ? temp[0] : "")  // temp 배열의 크기를 확인하여 안전하게 접근
                             .font(.custom("YEONGJUSeonbi", size: 30))
                             .multilineTextAlignment(.center)
@@ -85,7 +79,7 @@ struct viewSentences: View {
         if Sentence.Themas.count == 0 {
             showAlert = true  // 상태 업데이트
         } else {
-            self.temp = [Sentence.getMsg(), Sentence.getTitle()]  // 상태 업데이트
+            self.temp = Sentence.msg  // 상태 업데이트
         }
         
         isRefreshing = false  // 상태 업데이트

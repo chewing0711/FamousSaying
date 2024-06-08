@@ -1,10 +1,3 @@
-//
-//  checkThema.swift
-//  Practice3
-//
-//  Created by 박민규 on 5/7/24.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -54,7 +47,7 @@ struct checkThema: View {
     
     // Initial Themas를 추가하는 함수
     func addInitialThemas() {
-        let themaTitles = ["사랑", "동기부여"]
+        let themaTitles = ["사랑", "동기부여", "우정", "가족"]
         
         // 데이터베이스에 이미 존재하는 테마 타이틀을 가져옵니다.
         let existingTitles = themas.map { $0.title }
@@ -74,14 +67,6 @@ struct checkThema: View {
         for i in 0 ..< themas.count {
             isToggle(thema: themas[i].title, is_: themas[i].isCheck)
         }
-        
-        //        for i in 0 ..< themas.count {
-        //            if themas[i].isCheck {
-        //                Sentence.Themas.append(themas[i].title)
-        //            }
-        //        }
-        
-        
     }
 }
 

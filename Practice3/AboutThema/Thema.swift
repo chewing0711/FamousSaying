@@ -1,10 +1,3 @@
-//
-//  Thema.swift
-//  Practice3
-//
-//  Created by 박민규 on 5/13/24.
-//
-
 import Foundation
 import SwiftData
 
