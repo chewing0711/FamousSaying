@@ -27,7 +27,8 @@ SparkME의 개발에는 10일이 소요되었습니다.
 ## 어플리케이션 동작 시연
 
 ### 주요 동작 시연 1: 명언 표시
-![image](https://github.com/chewing0711/SparkME/assets/168335110/0400ea87-f947-4ff8-a6c5-6d9a9a9b9c3b)
+![img (1)](https://github.com/chewing0711/SparkME/assets/168335110/883a6e08-dc98-439f-b967-4c1dd604adce)
+
 
 - 메인 화면에서 아래로 드래그하면 선택된 테마에 맞는 명언이 랜덤으로 표시됩니다.
 - 테마가 선택되지 않으면 알림창이 표시됩니다.
@@ -35,7 +36,8 @@ SparkME의 개발에는 10일이 소요되었습니다.
 - 선택된 테마는 데이터베이스에 저장되어, 앱을 종료하고 다시 실행해도 그대로 유지됩니다.
 
 ### 주요 동작 시연 2: 알림 설정
-![image](https://github.com/chewing0711/SparkME/assets/168335110/b581d727-48b1-4757-a8c0-b96cdd472244)
+![img](https://github.com/chewing0711/SparkME/assets/168335110/03cbeeff-c5ab-49ba-9810-0e388111393c)
+
 
 - 사용자가 시간을 선택하면 현재 선택된 테마 중 랜덤한 명언이 해당 시간에 알림으로 표시됩니다.
 - 알림을 삭제하면 설정된 알람이 취소됩니다.
